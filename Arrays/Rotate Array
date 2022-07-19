@@ -73,4 +73,4 @@ class Solution{
    }
 };
 
-//generally try to avoid nested for loops as it reduces the run time!!
+//generally try to avoid nested loops as it reduces the run time!!
