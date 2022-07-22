@@ -1,0 +1,33 @@
+Frequency of a the numbers (0 to 9) in an array :
+
+public class Main
+{
+	public static void main(String[] args) {
+		int arr[] = {1,2,3,4,5,6,7,8,9};
+		int N=9;
+		Solution ob=new Solution();
+		ob.frequencyCount(arr, N);
+	}
+}
+class Solution{
+    //Function to count the frequency of all elements from 1 to N in the array.
+    public static void frequencyCount(int arr[], int n)
+    {
+        int fr[]=new int[10];
+        for(int i=0;i<10;i++)
+        {
+            fr[i]=0;
+        }
+        for(int i=0;i<n;i++)
+        {
+            fr[arr[i]]++;
+        }
+        for(int i=0;i<10;i++)
+        {
+            System.out.println(fr[i]);
+        }
+    }
+}
+
+frequency of numbers from 0 to 9 in a given number:
+
