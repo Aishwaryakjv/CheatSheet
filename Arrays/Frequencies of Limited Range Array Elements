@@ -71,3 +71,36 @@ class Solution{
         }
     }
 }
+
+in c++:
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    
+    int N=5;
+    int P=6;
+    int arr[]={1,2,3,3,1};
+        int maxi = max(P,N);
+       vector<int> count(maxi+1,0); //vector-->dynamic array , syntax: vector<datatype> name (size(must), initialisation(optional))
+       for(int i=0;i<N;i++){
+           count[arr[i]]+=1;
+       }
+       for(int i=0;i<N;i++){
+           arr[i] = count[i+1];
+       }                                        
+       cout<<count[0]<<"\n";
+       for(int i=0;i<N;i++)
+       {
+           cout<<arr[i];
+       }
+    return 0;
+}
+
+//in this program count array size has to be maxi+1 eg:
+suppose arr[]={1,2,3,5,6}...N=5;P=6
+here maxi=6
+count array starts from count[1]=,count[2]=,count[3]=,count[4]=,count[5]= and count[6] nd it also has count[0]...so total P+1(i.e maxi+1)
