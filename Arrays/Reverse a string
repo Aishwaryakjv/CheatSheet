@@ -1,4 +1,4 @@
-ou are given a string s. You need to reverse the string.
+you are given a string s. You need to reverse the string.
 
 Example 1:
 
@@ -6,7 +6,7 @@ Input:
 s = Geeks
 Output: skeeG
 
-CPP
+CPP: in form of char array
 
 #include <iostream>
 #include <cstring>
@@ -28,3 +28,14 @@ int main()
 }
 
 
+cpp: string
+string reverseWord(string str){
+  int n=str.size();  
+  for(int i=0;i<n/2;i++)
+  {
+      char t=str[i];
+      str[i]=str[n-1-i];
+      str[n-1-i]=t;
+  }
+  cout<<str;
+}
