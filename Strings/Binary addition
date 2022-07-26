@@ -1,0 +1,42 @@
+Binary addition using int array:
+
+//in java....
+import java.lang.Math;
+class Main {
+  public static void main(String[] args) {
+   // System.out.println("Hello world!");
+    int a=10101111;
+    int b=11111100;
+    int d1=0,d2=0,n=0;
+    while(a>0)
+      {
+        int rem=a%10;
+        a=a/10;
+        d1+=rem*Math.pow(2,n);
+        n++;
+      }
+    n=0;
+    while(b>0)
+      {
+        int rem=b%10;
+        b=b/10;
+        d2+=rem*Math.pow(2,n);
+        n++;
+      }
+    int sum=d1+d2;
+    System.out.println(sum);
+    int i=0;
+    int ans[]=new int[100];
+      
+    while(sum>0)
+      {
+        int rem=sum%2;
+        sum=sum/2;
+        ans[i++]=rem;
+      }
+
+    System.out.println(ans[8]+"\n");
+    for(int j=i-1;j>=0;j--)
+      System.out.println(ans[j]);
+  }
+}
