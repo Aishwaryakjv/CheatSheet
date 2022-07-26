@@ -37,6 +37,6 @@ class Main {
 
     System.out.println(ans[8]+"\n");
     for(int j=i-1;j>=0;j--)
-      System.out.println(ans[j]);
+      System.out.print(ans[j]);
   }
 }
