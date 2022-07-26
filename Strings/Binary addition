@@ -62,3 +62,24 @@ public:
         return sum;
     }
 };
+
+//in java....
+class Solution {
+    public String addBinary(String a, String b) {
+        int t=0;
+        int n=a.length()-1;
+        int m=b.length()-1;
+        String sum="";
+        //StringBuilder sum=new StringBuilder(" ");
+        while(t==1||n>=0||m>=0)
+        {
+            t+=(n>=0?(a.charAt(n)-'0'):0);
+            t+=(m>=0?(b.charAt(m)-'0'):0);
+            n--;
+            m--;
+            sum=(char)(t%2+'0')+sum;
+            t=t/2;
+        }
+        return sum.toString();
+    }
+}
