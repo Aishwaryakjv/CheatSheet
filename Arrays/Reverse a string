@@ -68,9 +68,8 @@ class Reverse
         }
      for(int i=0;i<n/2;i++)
      {
-        char t=str.charAt(i);
         ch[i]=str.charAt(n-1-i);
-        ch[n-1-i]=t;
+        ch[n-1-i]=str.charAt(i);
      }
     
      str = new String(ch);
