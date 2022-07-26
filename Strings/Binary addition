@@ -40,3 +40,25 @@ class Main {
       System.out.print(ans[j]);
   }
 }
+
+
+in cpp
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        int n=a.size()-1;
+        int m=b.size()-1;
+        int t=0;//carry
+        string sum="";
+        while(n>=0||m>=0||t==1)
+        {
+            t+=(n>=0?a[n]-'0':0);
+            t+=(m>=0?b[m]-'0':0);
+            n--;
+            m--;
+            sum=char(t%2+'0')+sum;
+            t=t/2;
+        }
+        return sum;
+    }
+};
