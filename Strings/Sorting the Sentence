@@ -22,7 +22,7 @@ Explanation: Sort the words in s to their original positions "Me1 Myself2 and3 I
 class Solution {
     public String sortSentence(String s) {
         StringBuilder temp=new StringBuilder();
-        int wo=0;
+        int wo=1;
         for(int i=0;i<s.length();i++)
         {
             if(s.charAt(i)==' ')
