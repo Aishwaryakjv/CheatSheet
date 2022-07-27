@@ -19,3 +19,37 @@ Output: "Me Myself and I"
 Explanation: Sort the words in s to their original positions "Me1 Myself2 and3 I4", then remove the numbers.
 
 //in java..
+class Solution {
+    public String sortSentence(String s) {
+        StringBuilder temp=new StringBuilder();
+        int wo=0;
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)==' ')
+                wo++;
+        }
+        String[] words= new String[wo];
+        for(int i=0;i<s.length();i++)
+        {
+            char c=s.charAt(i);
+            if(c==' ') continue;
+            if(c>='1' && c<='9')
+            {
+                words[(c-'0')-1]=temp.toString();
+                temp.setLength(0);
+                continue;
+            }
+            temp.append(c);
+        }
+        StringBuilder ans=new StringBuilder();
+        for(int i=0;i<words.length;i++)
+        {
+            ans.append(words[i]);
+            //if(i==words.length-1)
+               // break;
+            ans.append(' ');
+        }
+        return ans.toString();
+    }
+}
+
