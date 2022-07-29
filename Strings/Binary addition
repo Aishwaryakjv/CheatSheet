@@ -77,7 +77,7 @@ class Solution {
             t+=(m>=0?(b.charAt(m)-'0'):0);
             n--;
             m--;
-            sum=(char)(t%2+'0')+sum;
+            sum=(char)(t%2+'0')+sum; //or directly (t%2)+sum bcs in java automatically implicit conversion will happen
             t=t/2;
         }
         return sum.toString();
