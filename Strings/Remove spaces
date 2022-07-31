@@ -1,0 +1,29 @@
+Given a string, remove spaces from it. 
+
+Example 1:
+
+Input:
+S = "geeks  for geeks"
+Output: geeksforgeeks
+Explanation: All the spaces have been 
+removed.
+
+//in java:
+class Solution
+{
+   
+    String modify(String S)
+    {
+        int n=S.length();
+		char[] arr=S.toCharArray();
+		int k=0;
+		char[] a=new char[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        if(arr[i]!=' ')
+	        a[k++]=arr[i];	
+	    }
+	    S=new String(a); //String string = new String(a); for converting char array into string
+	    return S;
+    }
+}
