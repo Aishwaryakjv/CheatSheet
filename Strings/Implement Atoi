@@ -33,8 +33,23 @@ int main()
     return 0;
 }
 
-//but in java and cpp no direct inbuilt func is there for atoi.
+//but in java no direct inbuilt func is there for atoi. And for cpp for using atoi func the string input must be int atoi (const char * str).
 //in cpp:
+#include <iostream>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    const char* str = "200";
+    //string str="123";//if u give it is not correct
+    int n=atoi(str);
+    cout<<n;
+    return 0;
+}
+
+//in cpp without using inbuilt func directly
 class Solution{
   public:
     /*You are required to complete this method */
