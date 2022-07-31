@@ -19,6 +19,21 @@ Your Task:
 Complete the function atoi() which takes a string as input parameter and returns integer value of it. if the input string is not a numerical string then returns -1.
 Note: Numerical strings are the string where either every character is in between 0-9 or where the first character is '-' and the rest all characters are in between 0-9.
 
+//in c:
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    //printf("enter any string:");
+    //scanf("%s",&str);
+    char str[]="123";
+    int n=(atoi)(str);
+    printf("%d",n);
+    return 0;
+}
+
+//but in java and cpp no direct inbuilt func is there for atoi.
 //in cpp:
 class Solution{
   public:
