@@ -12,25 +12,20 @@ Example 2:
 Input: s = "cbbd"
 Output: "bb"
 
-/******************************************************************************
 
-                            Online Java Compiler.
-                Code, Compile, Run and Debug java program online.
-Write your code in this editor and press "Run" button to execute it.
-
-*******************************************************************************/
-
+import java.util.Arrays;
 public class Main
 {
 	public static void main(String[] args) {
-		String s="babad";
+		String str="bab";
 		Solution ob=new Solution();
-		String s1=ob.longestPalindrome(s);
+		String s1=ob.longestPalindrome(str);
 		System.out.println(s1);
 	}
 }
 class Solution {
     public String longestPalindrome(String s) {
+        char[] a=s.toCharArray();
         char[] arr=s.toCharArray();
         int n=s.length();
         for(int i=0;i<n/2;i++)
@@ -39,7 +34,16 @@ class Solution {
             arr[i]=arr[n-1-i];
             arr[n-1-i]=t;
         }
-        s=new String(arr);
-        return s;
+        
+        boolean result = Arrays.equals(a,arr);
+        System.out.println(result);
+        
+        /*String ans=new String(arr);//String ans = String.valueOf(arr);
+        if("bab"==ans)
+        {
+    	    System.out.println("hi");        
+        }*/
+        String ans=new String(arr);
+        return ans;
     }
 }
