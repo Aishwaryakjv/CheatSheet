@@ -44,3 +44,41 @@ class Solution {
     }  
 }
 
+or
+
+class Solution {
+    public String removeDigit(String number, char digit) {
+        int n = number.length();
+        
+        String max = null;
+        
+        for (int i = 0; i < n; i++) {
+            char c = number.charAt(i);
+            if (c == digit) {
+                String sub = number.substring(0, i) + number.substring(i + 1, n);
+                if (max == null)
+                    max = sub;
+                else
+                    max = this.strMax(max, sub);
+            }
+        }
+        
+        return max;
+    }
+    
+    private String strMax(String s, String t) {
+        int n = s.length();
+        
+        for (int i = 0; i < n; i++) {
+            char cs = s.charAt(i);
+            char ct = t.charAt(i);
+            
+            if (cs > ct)
+                return s;
+            if (cs < ct)
+                return t;
+        }
+        
+        return s;
+    }
+}
