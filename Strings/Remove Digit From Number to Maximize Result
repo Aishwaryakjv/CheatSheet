@@ -34,13 +34,13 @@ class Solution {
                 j=i;
                 if(sb.charAt(i)<sb.charAt(i+1))
                 {
-                    return String.valueOf(sb.deleteCharAt(i));
+                    return String.valueOf(sb.deleteCharAt(i)); 
                 }
             }
         }
         if(sb.charAt(sb.length()-1)==digit)
             return String.valueOf(sb.deleteCharAt(sb.length()-1));
-        return String.valueOf(sb.deleteCharAt(j));
+        return String.valueOf(sb.deleteCharAt(j));  //u can also give return sb.deleteCharAt(j).toString();
     }  
 }
 
