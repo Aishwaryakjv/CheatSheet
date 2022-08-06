@@ -1,0 +1,20 @@
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    String s="PAYPALISHIRING";
+	    int row=3;
+	    int step=(2*row)-2;//4
+	    for(int i=0;i<row;i++)//rows
+	    {
+	        for(int j=i;j<s.length();j=j+step)//col
+	        {
+	            System.out.print(s.charAt(j)+" ");
+	            if(i!=0 && i!=row-1 && j+step-(2*i)<s.length())
+	            {
+	                System.out.print(s.charAt(j+step-2*i)+" ");
+	            }
+	        }
+	    }
+	}
+}
