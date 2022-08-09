@@ -1,0 +1,149 @@
+Problem Statement
+Sample Input 1 :
+2
+2 3
+7 19 3
+4 21 0
+3 3
+1 2 3
+4 0 6
+7 8 9
+Sample Output 1 :
+7 19 0
+0 0 0
+1 0 3
+0 0 0
+7 0 9
+Explanation For Sample Input 1 :
+For First Case - Similar to the example explained above. 
+
+For Second Case - 
+Only the cell (2,2) has zero. So all the elements of the second row and second column are changed to zeros.
+Sample Input 2 :
+2
+4 2
+1 0
+2 7
+3 0
+4 8
+3 3
+0 2 3
+1 0 3
+1 2 0
+Sample Output 2 :
+0 0
+2 0
+0 0
+4 0
+0 0 0
+0 0 0
+0 0 0
+
+//in cpp:
+void setZeros(vector<vector<int>> &matrix)
+
+{
+
+// Write your code here.
+
+  bool col = false, row = false;
+
+   
+
+   int n = matrix.size(), m = matrix[0].size();
+
+   
+
+   for(int i = 0 ; i < n ; i++)
+
+   {
+
+       for(int j = 0 ; j < m ; j++)
+
+       {
+
+           if(matrix[i][j] == 0)
+
+           {
+
+               if(j == 0) col = true;
+
+               if(i == 0) row = true;    
+
+               matrix[0][j] = 0;
+
+               matrix[i][0] = 0;
+
+           }
+
+       }
+
+   }
+
+   
+
+   for(int i = 1 ; i < n ; i++)
+
+   {
+
+       for(int j = 1 ; j < m ; j++)
+
+       {
+
+           if(matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0;
+
+       }
+
+   }
+
+   
+
+   if(col){
+
+       for(int i = 0 ; i < n ; i++) matrix[i][0] = 0;
+
+   }
+
+   if(row){
+
+       for(int i = 0 ; i < m ; i++) matrix[0][i] = 0;
+
+   }
+
+   
+
+}
+
+//in java:
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static void setZeros(int matrix[][]) {
+        int m=matrix.length;
+        int n=matrix[0].length;
+        int mat[][]=new int[m][n];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                mat[i][j]=matrix[i][j];
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(matrix[i][j]==0){
+                    for(int k=0;k<m;k++){
+                        for(int l=0;l<n;l++){
+                            if(k==i || l==j)
+                                mat[k][l]=0;
+                        }
+                    }   
+                }
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                matrix[i][j]=mat[i][j];
+            }
+        }
+    }
+
+}
