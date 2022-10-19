@@ -1,0 +1,14 @@
+//power function in java
+//import java.lang.Math;
+//ans=Math.pow(x,y);
+
+
+import java.lang.Math;
+public class Main
+{
+	public static void main(String[] args) {
+		double ans;
+		ans=(Math.pow(12,21))%1000000007;
+		System.out.println(ans);
+	}
+}
