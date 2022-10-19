@@ -12,3 +12,7 @@ public class Main
 		System.out.println(ans);
 	}
 }
+
+for(int i=1;i<=R;i++){
+            ans=ans*N;
+        }
