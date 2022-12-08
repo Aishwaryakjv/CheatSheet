@@ -1,0 +1,48 @@
+// Using Typecasting
+
+#include <stdio.h>
+ 
+// Driver code
+int main()
+{
+    char ch = 'G';
+    printf("%d", (int)(ch));
+    return 0;
+}
+
+//Using atoi
+
+If the execution is successful, the atoi() method returns the converted integer value. If the given string cannot be converted to an integer, it will return 0.
+#include <stdio.h>  
+#include <stdlib.h>  
+#include <string.h>   
+int main()  
+{  
+    int val;  
+    char string1[20] = "99898989";  
+    val = atoi(string1);  
+    printf("String value = %s\n", string1);  
+    printf("Integer value = %d\n", val);  
+    char string2[] = "Javatpoint";  
+    val = atoi(string2);  
+    printf("String value = %s\n", string2);  
+    printf("Integer value = %d\n", val);  
+    return (0);  
+}  
+output:
+String value = 99898989
+Integer value = 99898989
+String value = Javatpoint
+Integer value = 0
+
+//Using sscanf
+#include <stdio.h>
+// Driver code
+int main()
+{
+    const char* s = "136";
+    int x;
+    sscanf(s, "%d", &x);
+    printf("\nThe integer value of x is %d ", x);
+    return 0;
+}
