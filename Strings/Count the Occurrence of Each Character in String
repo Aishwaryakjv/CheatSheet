@@ -24,9 +24,14 @@ int main()
     ch='a';
     for(int i=0;i<26;i++)
     {
-        printf("%c occurs %d\n",ch,arr[i]);
+        // if(arr[i]>0)
+        // printf("%c occurs %d\n",ch,arr[i]);
+        // ch++;
+        //or for displaying all char
+        printf("%c occurs %d\n",ch,arr[i]);                                 
         ch++;
     }
+    
     return 0;
 }
 
