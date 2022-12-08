@@ -46,3 +46,7 @@ int main()
     printf("\nThe integer value of x is %d ", x);
     return 0;
 }
+
+//for numbers in string to int
+char c = '5';
+int x = c - '0';
