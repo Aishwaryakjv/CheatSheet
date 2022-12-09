@@ -1,0 +1,47 @@
+C Program to remove given word from a string.
+
+Enter the string:
+Hello World hello world Hello W
+Enter the word to be removed: Hello
+ 
+World hello world W
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[100],word[20];
+    printf("enter the string: ");
+    gets(str);
+    printf("enter the word to be removed: ");
+    gets(word);
+    
+    char temp[20][20];
+    int i,j=0,k=0;
+    
+    for(i=0;i<strlen(str);i++){
+        if(str[i]==' '){
+            temp[k][j]='\0';
+            k++;
+            j=0;
+        }
+        else{
+            temp[k][j]=str[i];
+            j++;
+        }
+    }
+    
+    temp[k][j]='\0';
+    
+    for(i=0;i<k+1;i++)              //for(i=0;i<strlen(temp);i++)...u cannot give this because by default strlen(temp) returns strlen(temp[0])
+    {
+        if(strcmp(temp[i],word)==0)
+            continue;
+        else
+            printf("%s ",temp[i]);
+    }
+    
+    return 0;
+}
