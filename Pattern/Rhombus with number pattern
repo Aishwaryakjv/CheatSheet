@@ -1,0 +1,35 @@
+i/p: 5
+o/p:
+_ _ _ _ * * * * *
+_ _ _ * 1 2 3 *
+_ _ * 4 5 6 *
+_ * 7 8 9 *
+* * * * *
+
+i/p: 4
+o/p:
+_ _ _ * * * *
+_ _ * 1 2 *
+_ * 3 4 *
+* * * *
+#include <stdio.h>
+
+int main(){
+    int n=5,l=1;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n-1-i;j++)
+            printf("_ ");
+        if(i!=0 && i!=n-1){
+            printf("* ");
+            for(int k=0;k<n-2;k++)
+                printf("%d ",l++);
+            printf("* ");
+            }
+        else
+        {
+            for(int k=0;k<n;k++)                
+                printf("* ");
+        }
+        printf("\n");
+    }
+}
