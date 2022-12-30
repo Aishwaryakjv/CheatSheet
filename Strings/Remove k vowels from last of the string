@@ -1,0 +1,42 @@
+i/p:
+validate 3
+o/p:
+valdt
+
+i/p:
+problem 2
+o/p:prblm
+
+code:
+
+
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char s[101],str[100];
+    int k,count=0,j=0,index;
+    scanf("%s %d",s,&k);
+    for(int i=strlen(s)-1;i>=0;i--){
+        if(s[i]=='a'||s[i]=='e'||s[i]=='o'||s[i]=='i'||s[i]=='u'){
+            count++;
+        }
+        else{
+           // printf("%c ",s[i]);
+            str[j++]=s[i];
+           // count++;
+        }
+        if(count==k){
+            index=i;
+            break;
+        }
+    }
+    for(int i=index-1;i>=0;i--){
+        str[j++]=s[i];
+    }
+    str[j++]='\0';
+    for(int i=strlen(str)-1;i>=0;i--){
+        printf("%c",str[i]);
+    }
+    return 0;
+}
