@@ -27,6 +27,12 @@ int main()
 The biggest element is pushed at last.
 slower and less efficient than selection sort.
 bcs the swapped element may also be again swapped...their position is confirmed till the end iteration but in case selection each iteration determines the smallest element.
+
+while comparing these two algorithms we have to consider the two operations that are taking place in these algorithm i)comparison ii)swapping on the basis of 
+comparison operation both are equally efficient but if you consider swapping operation you will find that selection sort is more efficient consider a array of 
+size 100 in descending and we have to sort them in ascending order in this problem BUBBLE SORT will take 100*100=(10000)apprx swapping operations while in case 
+of SELCTION SORT it will take only 100 swapping operations beacuse in selection sort at each iteration only one swapping take place
+
 Best case:  O(n)
 Worst case: O(n^2)
 Stability: stable
