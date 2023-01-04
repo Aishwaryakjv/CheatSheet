@@ -1,0 +1,43 @@
+Rotate clock and anti-clock wise circularly the elements of an array for a given no.
+
+clk wise
+eg:
+int n=5;
+int x=3;
+int a[]={1,2,3,4,5}
+
+o/p:  4 5 1 2 3
+
+if x was 1 o/p has to be 2 3 4 5 1
+
+#include <stdio.h>
+
+int main()
+{
+    int n=5;
+    int a[5]={1,2,3,4,5};
+
+    int x=3; //4 5 1 2 3
+    int ctr=0;
+    while(ctr<n)
+    {
+        printf("%d ",a[x++]);
+        if(x==n){
+            x=0;
+        }
+        ctr++;
+    }
+    
+
+    return 0;
+}
+
+
+anti-clk wise
+eg:
+int n=5;
+int x=3;
+int a[]={1,2,3,4,5}
+
+o/p: 3 4 5 1 2 
+
