@@ -25,7 +25,7 @@ int main()
 }
 
 Best case:  O(n)
-Worst case: O(n2)
+Worst case: O(n^2)
 
 Stability: stable
 
@@ -62,8 +62,8 @@ int main()
     return 0;
 }
 
-Best case:  O(n2)
-Worst case: O(n2)
+Best case:  O(n^2)
+Worst case: O(n^2)
 
 
 Stability: unstable
