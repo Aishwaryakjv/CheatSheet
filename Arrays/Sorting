@@ -1,0 +1,71 @@
+Bubble Sort:
+
+#include <stdio.h>
+
+int main()
+{
+    int a[5]={1,3,2,5,4};
+    
+    for(int i=0;i<5;i++)
+    {
+        for(int j=i+1;j<5;j++){
+            if(a[j]<a[i])
+            {
+                int t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+        }
+    }
+    
+    for(int i=0;i<5;i++){
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+
+Best case:  O(n)
+Worst case: O(n2)
+
+Stability: stable
+
+
+
+
+Selection Sort:
+
+#include <stdio.h>
+
+int main()
+{
+    int a[5]={1,3,2,5,4};
+    
+    for(int i=0;i<4;i++)
+    {
+        int pos=i;
+        for(int j=i+1;j<5;j++){
+            if(a[j]<a[pos])
+                pos=j;
+        }
+        if(pos!=i)
+        {
+            int temp=a[i];
+            a[i]=a[pos];
+            a[pos]=temp;
+        }
+    }
+
+    
+    for(int i=0;i<5;i++){
+        printf("%d ",a[i]);
+    }
+    return 0;
+}
+
+Best case:  O(n2)
+Worst case: O(n2)
+
+
+Stability: unstable
+
+https://www.youtube.com/watch?v=X1DUh3JhLTw     //for stable vs unstable sort
