@@ -1,0 +1,55 @@
+if the val is 0 make its entire row and col as 0.
+eg:
+i/p: 2 3
+1 2 3 
+1 0 3
+
+o/p:
+1 0 3
+0 0 0 
+
+code:
+
+#include <stdio.h>
+
+int main()
+{
+    int r,c;
+    scanf("%d %d",&r,&c);
+    int a[r][c];
+    int zr[r],zc[c];//zr=zero in row
+    
+    for(int i=0;i<r;i++)
+        zr[i]=0;
+        
+    for(int i=0;i<c;i++)
+        zc[i]=0;
+        
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            scanf("%d",&a[i][j]);
+            if(a[i][j]==0){
+                zr[i]++;
+                zc[j]++;
+            }
+        }
+    }
+    
+    for(int i=0;i<r;i++)
+    {
+        for(int j=0;j<c;j++)
+        {
+            if(zr[i]||zc[j]){
+                printf("0 ");
+            }
+            else
+            {
+                printf("%d ",a[i][j]);
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}
