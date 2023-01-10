@@ -1,0 +1,29 @@
+Accept k as input. Print the Kth char when the reverse of string is repeated infinite no of times.
+
+eg:skillrack 13
+o/p: r
+
+#include <stdio.h>
+
+int main()
+{
+    char s[100];
+    scanf("%s",s);
+    int k;
+    scanf("%d",&k);
+    int n=strlen(s);
+    int l=0,r=n-1;
+    while(l<r){
+        char c=s[l];
+        s[l]=s[r];
+        s[r]=c;
+        r--;
+        l++;
+    }
+    if(k%n==0)
+        printf("%c",s[0]);
+    else
+        printf("%c",s[k%n-1]);
+
+    return 0;
+}
