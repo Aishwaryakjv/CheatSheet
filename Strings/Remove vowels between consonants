@@ -1,0 +1,35 @@
+i/p: 3
+great
+age
+history
+o/p:
+grt
+age
+hstry
+
+#include <stdio.h>
+#include <string.h>
+int isMatchFound(char s1[],char s2[],int s1index,int s2index){
+    while(s1[s1index]!='\0'){
+        if(s1[s1index]!=s2[s2index])
+            return 0;
+        s1index++;
+        s2index++;
+    }
+    return 1;
+}
+int main()
+{
+    char s1,s2;
+    scanf("%s %s",s1,s2);
+    
+    int s1index=strlen(s1)-1,s1StartIndex=0,s2index=0;
+    while(s1index>=0)
+    {
+        if(isMatchFound(s1,s2,s1index,s2index)==1)
+            s1StartIndex=s1index;
+        s1index--;
+    }
+    printf("%s",&s1[s1StartIndex]);
+    return 0;
+}
