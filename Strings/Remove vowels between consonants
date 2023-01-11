@@ -7,29 +7,49 @@ grt
 age
 hstry
 
-#include <stdio.h>
+
+
 #include <string.h>
-int isMatchFound(char s1[],char s2[],int s1index,int s2index){
-    while(s1[s1index]!='\0'){
-        if(s1[s1index]!=s2[s2index])
-            return 0;
-        s1index++;
-        s2index++;
-    }
-    return 1;
+#include <stdio.h>
+int isVowel(char c)
+{
+    return c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
 }
 int main()
 {
-    char s1,s2;
-    scanf("%s %s",s1,s2);
+    int n;
+    scanf("%d",&n);
+    char s[101];
     
-    int s1index=strlen(s1)-1,s1StartIndex=0,s2index=0;
-    while(s1index>=0)
+    for(int i=0;i<n;i++)
     {
-        if(isMatchFound(s1,s2,s1index,s2index)==1)
-            s1StartIndex=s1index;
-        s1index--;
+        scanf("%s",s);
+        
+        int firstConsonantIndex=-1,lastConsonantIndex=-1;
+        int len=strlen(s),index=0;
+        while(index<len && isVowel(s[index]))
+        {
+            index++;
+        }
+        firstConsonantIndex=index;
+        index=len-1;
+        while(index>=0 && isVowel(s[index]))
+        {
+            index--;
+        }
+        lastConsonantIndex=index;
+        
+        for(int i=0;i<len;i++){
+            if(i>firstConsonantIndex && i<lastConsonantIndex)
+            {
+                if(!isVowel(s[i]))
+                    printf("%c",s[i]);
+            }
+            else
+            printf("%c",s[i]);
+        }
+        printf("\n");
     }
-    printf("%s",&s1[s1StartIndex]);
+    
     return 0;
 }
