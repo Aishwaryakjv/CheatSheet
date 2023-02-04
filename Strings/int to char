@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int n;
+	    Scanner sc=new Scanner(System.in);
+	    n=sc.nextInt();
+		System.out.println((char)(n+'a'-1));
+	}
+}
+
+i/p:5
+o/p:e
+
+i/p:1
+o/p:a
