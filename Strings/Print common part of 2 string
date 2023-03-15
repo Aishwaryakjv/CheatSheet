@@ -9,6 +9,45 @@ i/p:cake
 cake
 o.p:cake
 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String s1,s2;
+	    s1=sc.nextLine();
+	    s2=sc.nextLine();
+	    char[] ss1=s1.toCharArray();
+	    char[] ss2=s2.toCharArray();
+	    int j=0;
+	    int i=s1.length()-1;
+	    while(i>=0)
+	    {
+	        if(ss1[i]!=ss2[j])
+	        {
+	            j++;
+	        }
+	        else
+	        {
+	            if(ss1[i-1]==ss2[j])
+	            {
+	                j++;
+	                i--;
+	            }
+	            else
+	            {
+	                break;
+	            }
+	        }
+	    }
+		
+		for(int k=0;k<=j;k++)
+		{
+		    System.out.print(ss2[k]);
+		}
+	}
+}
+
 #include <stdio.h>
 #include <string.h>
 int isMatchFound(char s1[],char s2[],int s1index,int s2index){
@@ -35,3 +74,4 @@ int main()
     printf("%s",&s1[s1StartIndex]);
     return 0;
 }
+
